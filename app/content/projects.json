@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Chiozz",
+    "description": "A beauty and health e-commerce platform featuring complex third-party integrations including Google Maps, Google Places, OAuth authentication, Stripe payments, and the KLIA Ekspres API for a seamless Malaysian market experience.",
+    "tags": ["VueJS", "Laravel", "Stripe", "Google Maps API", "Google Places API", "OAuth", "KLIA Ekspres API"],
+    "url": "https://chiozz.com",
+    "year": "2025",
+    "featured": true,
+    "image": "/images/projects/chiozz-ss.png",
+    "images": ["/images/projects/chiozz-ss.png"]
+  },
+  {
+    "id": 2,
+    "title": "Ecogrocer",
+    "description": "A grocery e-commerce aggregator with an integrated food bank donation system, allowing consumers to shop for groceries or donate excess food to nearby NGOs and food banks. Includes a full CMS for merchants, food bank admins, and platform admins.",
+    "tags": ["VueJS", "Laravel", "Stripe", "Google Maps API", "Google Places API", "CMS"],
+    "url": "https://ecogrocer.jasperlhj.com",
+    "year": "2025",
+    "featured": true,
+    "image": "/images/projects/eco-ss.png",
+    "images": ["/images/projects/eco-ss.png", "/images/projects/calvary-ss.png"]
+  },
+  {
+    "id": 3,
+    "title": "Calvary Church",
+    "description": "A modern church website for Calvary Church Malaysia, built with Nuxt 4 and featuring content management via Nuxt Content and smooth UI interactions powered by Swiper web components.",
+    "tags": ["NuxtJS", "VueJS", "Nuxt Content", "Swiper"],
+    "url": "https://calvary-nuxt.vercel.app",
+    "year": "2025",
+    "featured": true,
+    "image": "/images/projects/calvary-ss.png",
+    "images": ["/images/projects/calvary-ss.png"]
+  },
+  {
+    "id": 4,
+    "title": "HealthOpt",
+    "description": "A clinic management system with a built-in staff burnout tracking module. Built on a decoupled frontend/backend architecture, with CI/CD pipelines, Docker containerisation, and AWS EC2 deployment ensuring continuous delivery.",
+    "tags": ["NuxtJS", "ASP.NET Web API", "Docker", "AWS EC2", "CI/CD"],
+    "url": "https://ddac-nuxt.vercel.app",
+    "year": "2025",
+    "featured": true,
+    "image": "/images/projects/health-ss.png",
+    "images": ["/images/projects/health-ss.png"]
+  }
+]

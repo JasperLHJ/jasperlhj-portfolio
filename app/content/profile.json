@@ -1,0 +1,34 @@
+{
+  "name": "Jasper Lee Hau Jun",
+  "title": "Full Stack Developer",
+  "tagline": "I build fast, scalable, and beautiful web applications.",
+  "bio": "I'm a full stack developer with a deep focus on NuxtJS and Laravel. I craft end-to-end digital products — from pixel-perfect frontends to robust, well-architected APIs.",
+  "location": "Malaysia",
+  "email": "hello@jasperlhj.dev",
+  "social": {
+    "github": "https://github.com/jasperlhj",
+    "linkedin": "https://linkedin.com/in/jasperlhj"
+  },
+  "specializations": [
+    {
+      "icon": "⚡",
+      "title": "Frontend Engineering",
+      "description": "Building performant, accessible UIs with NuxtJS, Vue 3, and TypeScript. SSR, SSG, and everything in between."
+    },
+    {
+      "icon": "🔧",
+      "title": "Backend & API Design",
+      "description": "Designing clean, RESTful APIs with Laravel. Solid database architecture, authentication, and third-party integrations."
+    },
+    {
+      "icon": "🚀",
+      "title": "Full Stack Delivery",
+      "description": "End-to-end ownership of features — from database schema to deployed production system, with CI/CD pipelines."
+    },
+    {
+      "icon": "🎨",
+      "title": "UI/UX Sensibility",
+      "description": "A keen eye for design systems, micro-interactions, and user experience that makes products feel polished and intentional."
+    }
+  ]
+}
