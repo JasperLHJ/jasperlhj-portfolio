@@ -1,10 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2025-01-01',
+  future: { compatibilityVersion: 4 },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
-  css: ['~/assets/css/main.css'],
+  modules: ['@nuxt/image', '@nuxtjs/google-fonts', '@nuxtjs/tailwindcss'],
+  googleFonts: {
+    families: {
+      'Cormorant Garamond': [300, 400],
+      'DM Sans': [300, 400, 500],
+      'DM Mono': [400],
+    },
+    display: 'swap',
+  },
+  runtimeConfig: {
+    resendApiKey: '',
+    contactToEmail: 'hello@jasperlhj.dev',
+  },
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'Jasper Lee Hau Jun — Full Stack Developer',
       meta: [
@@ -16,21 +29,10 @@ export default defineNuxtConfig({
             'Full Stack Developer specializing in NuxtJS and Laravel. Building fast, scalable, and beautiful web applications.',
         },
       ],
-      link: [
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.googleapis.com',
-        },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: '',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap',
-        },
-      ],
     },
+  },
+  css: ['~/assets/css/main.css'],
+  image: {
+    format: ['webp'],
   },
 })
