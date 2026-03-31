@@ -5,6 +5,8 @@ export interface Profile {
   bio: string
   location: string
   email: string
+  /** International number digits only (no + or spaces), e.g. 60123456789 for wa.me */
+  whatsappPhone?: string
   social: {
     github: string
     linkedin: string

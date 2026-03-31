@@ -47,10 +47,30 @@
       </Transition>
 
       <ul
-        class="mt-12 flex flex-wrap gap-8"
+        class="link-row mt-12 flex flex-nowrap items-center gap-8 overflow-x-auto"
         role="list"
       >
-        <li>
+        <li v-if="whatsappHref" class="shrink-0">
+          <a
+            :href="whatsappHref"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 font-sans text-sm text-ink transition-colors duration-200 hover:text-accent"
+          >
+            <MessageCircle :size="18" stroke-width="1.5" />
+            WhatsApp
+          </a>
+        </li>
+        <li class="shrink-0">
+          <a
+            :href="`mailto:${profile.email}`"
+            class="inline-flex items-center gap-2 font-sans text-sm text-ink transition-colors duration-200 hover:text-accent"
+          >
+            <Mail :size="18" stroke-width="1.5" />
+            Email
+          </a>
+        </li>
+        <li class="shrink-0">
           <a
             :href="profile.social.github"
             target="_blank"
@@ -61,7 +81,7 @@
             GitHub
           </a>
         </li>
-        <li>
+        <li class="shrink-0">
           <a
             :href="profile.social.linkedin"
             target="_blank"
@@ -95,7 +115,7 @@
 </template>
 
 <script setup lang="ts">
-import { Check, Copy, Github, Linkedin } from 'lucide-vue-next'
+import { Check, Copy, Github, Linkedin, Mail, MessageCircle } from 'lucide-vue-next'
 import profileJson from '~/content/profile.json'
 import type { Profile } from '~/types/content'
 
@@ -104,6 +124,11 @@ definePageMeta({
 })
 
 const profile = profileJson as Profile
+
+const whatsappHref = computed(() => {
+  const digits = (profile.whatsappPhone ?? '').replace(/\D/g, '')
+  return digits ? `https://wa.me/${digits}` : ''
+})
 
 const copied = ref(false)
 const toast = ref(false)
@@ -140,5 +165,14 @@ onUnmounted(() => {
 .toast-enter-from,
 .toast-leave-to {
   opacity: 0;
+}
+
+.link-row {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.link-row::-webkit-scrollbar {
+  display: none;
 }
 </style>
