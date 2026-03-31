@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     resendApiKey: '',
-    contactToEmail: 'hello@jasperlhj.dev',
+    contactToEmail: 'jasperleehaujun88@gmail.com',
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
