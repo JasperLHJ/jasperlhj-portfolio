@@ -20,7 +20,9 @@ useSeoMeta({
     'Full stack developer focused on NuxtJS and Laravel. Selected work and contact.',
 })
 
-function onLoadDone() {
-  /* reserved for analytics or focus management */
+async function onLoadDone() {
+  if (!import.meta.client) return
+  const { ScrollTrigger } = await import('gsap/ScrollTrigger')
+  ScrollTrigger.refresh()
 }
 </script>

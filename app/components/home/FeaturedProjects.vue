@@ -63,7 +63,7 @@
               </a>
             </div>
 
-            <div class="lg:col-span-4">
+            <div class="featured-project__media lg:col-span-4">
               <a
                 :href="project.url"
                 target="_blank"
@@ -112,23 +112,31 @@ onMounted(() => {
     const tiles = Array.from(root.querySelectorAll<HTMLElement>(':scope > li'))
     if (!tiles.length) return
 
-    gsap.fromTo(
-      tiles,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: root,
-          start: 'top 85%',
-          once: true,
-          scroller: document.documentElement,
+    // Animate copy/meta only — not the image column. Opacity:0 on the whole
+    // `<li>` prevents reliable lazy image loading on some mobile browsers.
+    tiles.forEach((tile) => {
+      const parts = tile.querySelectorAll<HTMLElement>(
+        ':scope > article > div:not(.featured-project__media)',
+      )
+      if (!parts.length) return
+      gsap.fromTo(
+        parts,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          stagger: 0.08,
+          scrollTrigger: {
+            trigger: tile,
+            start: 'top 85%',
+            once: true,
+            scroller: document.documentElement,
+          },
         },
-      },
-    )
+      )
+    })
     ScrollTrigger.refresh()
   })
 })
