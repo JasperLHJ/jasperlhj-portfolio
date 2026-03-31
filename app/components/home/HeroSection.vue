@@ -43,40 +43,8 @@
         </div>
       </div>
 
-      <div
-        class="relative flex min-h-[220px] items-center justify-center lg:min-h-[320px]"
-        aria-hidden="true"
-      >
-        <svg
-          class="hero-orbit text-ink-faint"
-          viewBox="0 0 200 200"
-          width="280"
-          height="280"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g transform="translate(100 100)">
-            <circle
-              cx="0"
-              cy="0"
-              r="78"
-              stroke="currentColor"
-              stroke-width="0.5"
-              opacity="0.35"
-            />
-            <path
-              d="M 0 -78 A 78 78 0 1 1 -0.1 -78"
-              stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              opacity="0.85"
-            />
-            <circle cx="0" cy="-78" r="3" fill="currentColor" opacity="0.5" />
-            <circle cx="78" cy="0" r="2" fill="currentColor" opacity="0.4" />
-            <circle cx="0" cy="78" r="2.5" fill="currentColor" opacity="0.45" />
-            <circle cx="-60" cy="40" r="2" fill="currentColor" opacity="0.35" />
-          </g>
-        </svg>
+      <div class="flex min-h-[360px] items-center justify-center lg:min-h-[520px]">
+        <OrbitCanvas />
       </div>
     </div>
 
@@ -95,6 +63,7 @@
 import { gsap } from 'gsap'
 import profileJson from '~/content/profile.json'
 import type { Profile } from '~/types/content'
+import OrbitCanvas from './OrbitCanvas.vue'
 
 const profile = profileJson as Profile
 
@@ -126,15 +95,7 @@ onMounted(() => {
   )
 
   if (div) {
-    tl.to(
-      div,
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: 'power3.out',
-      },
-      '-=0.45',
-    )
+    tl.to(div, { scaleX: 1, duration: 1, ease: 'power3.out' }, '-=0.45')
   }
 
   tl.fromTo(

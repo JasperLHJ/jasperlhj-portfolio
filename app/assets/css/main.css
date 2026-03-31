@@ -113,25 +113,7 @@ a:hover {
   animation-play-state: paused;
 }
 
-/* Hero decorative rotation */
-@keyframes hero-orbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.hero-orbit {
-  animation: hero-orbit 60s linear infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero-orbit {
-    animation: none;
-  }
-
   .marquee-track,
   .marquee-track--reverse {
     animation: none;
