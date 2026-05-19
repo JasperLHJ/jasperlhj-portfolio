@@ -26,7 +26,7 @@
     "title": "Calvary Church",
     "description": "A modern church website for Calvary Church Malaysia, built with Nuxt 4 and featuring content management via Nuxt Content and smooth UI interactions powered by Swiper web components.",
     "tags": ["NuxtJS", "VueJS", "Nuxt Content", "Swiper"],
-    "url": "https://calvary-nuxt.vercel.app",
+    "url": "https://calvary.corn.my/",
     "year": "2025",
     "featured": true,
     "image": "/images/projects/calvary-ss.png",
@@ -42,5 +42,16 @@
     "featured": true,
     "image": "/images/projects/health-ss.png",
     "images": ["/images/projects/health-ss.png"]
+  },
+  {
+    "id": 5,
+    "title": "Aletheia",
+    "description": "A private school website built with Laravel and a custom CMS for managing site content, blogs, testimonials, educators, and programme information. A daily cron job scrapes Instagram posts to sync blog content, with SEO and Google Analytics configured. Deployed via Docker on DigitalOcean.",
+    "tags": ["Laravel", "CMS", "Docker", "DigitalOcean", "SEO", "Google Analytics", "Cron Jobs"],
+    "url": "https://aletheiaresourcecenter.com",
+    "year": "2026",
+    "featured": true,
+    "image": "/images/projects/aletheia-ss.png",
+    "images": ["/images/projects/aletheia-ss.png"]
   }
 ]

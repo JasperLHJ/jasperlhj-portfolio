@@ -59,7 +59,7 @@ import type { Profile } from '~/types/content'
 const profile = profileJson as Profile
 
 const stats = [
-  { key: 'proj', label: 'Projects shipped', hint: '', target: 4, suffix: '' },
+  { key: 'proj', label: 'Projects shipped', hint: '', target: 10, suffix: '+' },
   { key: 'yrs', label: 'Years building', hint: '', target: 2, suffix: '+' },
   { key: 'stack', label: 'Core stacks', hint: 'Nuxt + Laravel', target: 2, suffix: '' },
   { key: 'loc', label: 'Based in', hint: '', target: 0, suffix: 'MY', isText: true },
