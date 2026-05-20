@@ -146,9 +146,30 @@ function copyEmail() {
   }, 2000)
 }
 
+const siteUrl = 'https://jasperlhj.com'
+const pageTitle = 'Contact — Jasper Lee Hau Jun'
+const pageDescription = 'Based in Malaysia and open to local and remote collaborations. Reach out for freelance projects, contract work, or full-time opportunities.'
+
 useSeoMeta({
   title: 'Contact',
-  description: 'Get in touch for collaborations and opportunities.',
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogType: 'website',
+  ogUrl: `${siteUrl}/contact`,
+  ogSiteName: 'Jasper Lee Hau Jun',
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/contact` }],
+})
+
+defineOgImage({
+  title: pageTitle,
+  description: pageDescription,
 })
 
 onUnmounted(() => {

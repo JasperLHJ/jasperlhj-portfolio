@@ -36,8 +36,29 @@ const yearLabel = computed(() => {
   return years.join(' · ')
 })
 
+const siteUrl = 'https://jasperlhj.com'
+const pageTitle = 'Projects — Jasper Lee Hau Jun'
+const pageDescription = 'Full stack projects built for Malaysian clients and beyond — e-commerce, SaaS, and web apps using Nuxt and Laravel.'
+
 useSeoMeta({
   title: 'Projects',
-  description: 'Selected full stack projects — Nuxt, Laravel, e-commerce, and more.',
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogType: 'website',
+  ogUrl: `${siteUrl}/projects`,
+  ogSiteName: 'Jasper Lee Hau Jun',
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/projects` }],
+})
+
+defineOgImage({
+  title: pageTitle,
+  description: pageDescription,
 })
 </script>
