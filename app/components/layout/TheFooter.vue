@@ -9,8 +9,15 @@
       <p class="text-center md:text-left">
         © {{ year }} Jasper Lee Hau Jun
       </p>
-      <p class="text-center">
-        · Malaysia ·
+      <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center">
+        <span>· Malaysia ·</span>
+        <button
+          type="button"
+          class="text-ink-muted underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-accent hover:decoration-accent"
+          @click="openPrivacyPolicy"
+        >
+          Privacy Policy / Dasar Privasi
+        </button>
       </p>
       <ul
         class="flex items-center justify-center gap-5 md:justify-end"
@@ -50,4 +57,5 @@ import type { Profile } from '~/types/content'
 
 const profile = profileJson as Profile
 const year = new Date().getFullYear()
+const { open: openPrivacyPolicy } = usePrivacyPolicyDialog()
 </script>

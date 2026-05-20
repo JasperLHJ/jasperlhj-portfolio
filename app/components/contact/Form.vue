@@ -77,6 +77,51 @@
           </div>
         </div>
 
+        <div class="pt-2">
+          <Field
+            name="consent"
+            type="checkbox"
+            :value="true"
+            :unchecked-value="false"
+            v-slot="{ field: f, errorMessage, meta }"
+          >
+            <label class="flex cursor-pointer items-start gap-3">
+              <input
+                id="consent"
+                type="checkbox"
+                v-bind="f"
+                class="mt-1 h-4 w-4 shrink-0 rounded border-border text-accent focus:ring-accent"
+              />
+              <span class="font-sans text-sm leading-relaxed text-ink-muted">
+                <span class="block text-ink">English</span>
+                I consent to the collection and use of my personal data (name, email, and message) to respond to my enquiry, as described in the
+                <button
+                  type="button"
+                  class="text-accent underline underline-offset-2 transition-colors duration-200 hover:text-accent-hover"
+                  @click.prevent="openPrivacyPolicy"
+                >
+                  Privacy Policy
+                </button>.
+                <span class="mt-3 block text-ink">Bahasa Malaysia</span>
+                Saya bersetuju dengan pengumpulan dan penggunaan data peribadi saya (nama, e-mel, dan mesej) untuk membalas pertanyaan saya, seperti yang diterangkan dalam
+                <button
+                  type="button"
+                  class="text-accent underline underline-offset-2 transition-colors duration-200 hover:text-accent-hover"
+                  @click.prevent="openPrivacyPolicy"
+                >
+                  Dasar Privasi
+                </button>.
+              </span>
+            </label>
+            <p
+              v-if="errorMessage && meta.touched"
+              class="mt-2 font-mono text-xs text-ink-muted"
+            >
+              {{ errorMessage }}
+            </p>
+          </Field>
+        </div>
+
         <button
           type="submit"
           class="relative w-full overflow-hidden py-4 font-sans text-base font-medium transition-[background-color,color,transform] duration-200 disabled:opacity-60"
@@ -128,12 +173,20 @@ const schema = toTypedSchema(
     name: z.string().min(1, 'Please enter your name').max(200),
     email: z.string().email('Valid email required'),
     message: z.string().min(10, 'Please write a bit more').max(10000),
+    consent: z
+      .boolean()
+      .refine((val) => val === true, 'You must agree before sending your message'),
   }),
 )
 
 const { handleSubmit, resetForm } = useForm({
   validationSchema: schema,
+  initialValues: {
+    consent: false,
+  },
 })
+
+const { open: openPrivacyPolicy } = usePrivacyPolicyDialog()
 
 const labels = {
   name: 'Name',
