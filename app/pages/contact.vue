@@ -167,7 +167,7 @@ useHead({
   link: [{ rel: 'canonical', href: `${siteUrl}/contact` }],
 })
 
-defineOgImage({
+defineOgImage('NuxtSeo.takumi', {
   title: pageTitle,
   description: pageDescription,
 })

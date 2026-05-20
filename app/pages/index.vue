@@ -64,7 +64,7 @@ useHead({
   ],
 })
 
-defineOgImage({
+defineOgImage('NuxtSeo.takumi', {
   title: pageTitle,
   description: pageDescription,
 })
